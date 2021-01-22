@@ -26,11 +26,11 @@ function transform(json) {
     }
 
     function escapeHtml(value) {
-        value = value.toString();
-        if (value[0] === '&' && value[value.length - 1] === ';') {
-            value = value.slice(1, value.length - 1);
-        }
-        return value;
+        return value.toString().replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
 }
 let data = '[{"Name":"Stamat","Score":5.5},{"Name":"Rumen","Score":6}]';
