@@ -1,0 +1,15 @@
+[
+    {
+        "img":"https://www.ikea.com/PIAimages/0447583_PE597395_S5.JPG",
+        "name": "Sofa",
+        "price": "259",
+        "decFactor":"0.4"
+
+    },
+    {
+        "img":"https://5.imimg.com/data5/WG/KD/MY/SELLER-1454654/designer-bedroom-wardrobe-500x500.jpg",
+        "name": "Wardrobe",
+        "price": "120",
+        "decFactor":"1.2"
+    }
+]
