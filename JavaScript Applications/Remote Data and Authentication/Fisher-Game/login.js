@@ -18,6 +18,8 @@ async function login(event) {
     }
     
     const data = await response.json();
+    console.log(data)
     sessionStorage.setItem('accessToken', data.accessToken);
-    window.location.pathname = '05.Fisher-Game/index.html';
+    sessionStorage.setItem('ownerId', data._id);
+    window.location.pathname = 'Fisher-Game/index.html';
 }

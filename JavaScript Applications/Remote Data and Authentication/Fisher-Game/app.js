@@ -21,7 +21,7 @@ function logout() {
     })
 
     sessionStorage.removeItem('accessToken');
-    window.location.pathname = '05.Fisher-Game/index.html';
+    window.location.pathname = 'Fisher-Game/index.html';
 }
 
 function invokeHandler(event) {
@@ -74,8 +74,15 @@ function toggleButtons() {
     const token = sessionStorage.getItem('accessToken');
     const buttons = document.querySelectorAll('button');
     const guest = document.getElementById('guest');
+    
     if (token != null) {
-        buttons.forEach(b => b.disabled = false);
+        const ownerId = sessionStorage.getItem('ownerId');
+        buttons.forEach(b => {
+            b.disabled = false;
+            if ((b.textContent == 'Update' || b.textContent == 'Delete') && b.parentNode.dataset.owner != ownerId) {
+                b.disabled = true;
+            }
+        });
         guest.children[0].remove();
         guest.appendChild(logoutButton);
     } else {
@@ -126,6 +133,7 @@ async function loadCatches() {
     function createDiv(data) {
         const div = document.createElement('div');
         div.dataset.id = data._id;
+        div.dataset.owner = data._ownerId;
         div.className = 'catch';
         const anglerLabel = document.createElement('label');
         anglerLabel.textContent = 'Angler';

@@ -26,6 +26,7 @@ async function register(event) {
 
     const data = await response.json();
     sessionStorage.setItem('accessToken', data.accessToken);
+    sessionStorage.setItem('ownerId', data._id);
     alert('Registered successfully !');
     event.target.reset();
 }
