@@ -1,2 +1,2 @@
 # SoftUni - JavaScript - Advanced
-Topics & Exercises
+JavaScript Advanced & JavaScript Applications (Topics and Exercises)
